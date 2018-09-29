@@ -1,6 +1,6 @@
 import cocotb
 from cocotb.clock import Clock
-from cocotb.triggers import Timer
+from cocotb.triggers import Timer, RisingEdge, FallingEdge
 from cocotb.result import TestFailure
 import random
 
@@ -10,8 +10,17 @@ import random
 
 @cocotb.test()
 def adder_basic_test(dut):
-	cocotb.fork(Clock(dut.clock, 5000).start())
-	yield Timer(100)
+    cocotb.fork(Clock(dut.clock, 5000).start())
+    yield Timer(100)
+
+    dut.edge_capture=0
+    dut.data_in=1
+    yield FallingEdge(dut.clock)
+    yield FallingEdge(dut.clock)
+    if dut.data_out != 1:
+        print("This shit is broken")
+    else:
+        print("It might work")
     # yield Timer(2)
     # A = 5
     # B = 10
