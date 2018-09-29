@@ -15,5 +15,5 @@ module input_sync #(parameter WIDTH = 8)(
     always @(posedge clock) data_in_pos <= data_in;
     always @(negedge clock) data_in_neg <= data_in;
 
-    data_out = edge_capture ? data_in_pos : data_in_neg;  
+    assign data_out = edge_capture ? data_in_pos : data_in_neg;  
 endmodule // input_sync
