@@ -1,0 +1,3 @@
+[submodule "Validation/cocotb"]
+	path = Validation/cocotb
+	url = https://github.com/potentialventures/cocotb.git
