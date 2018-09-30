@@ -1,0 +1,3 @@
+*.pyc
+*.xml
+*/sim_build/*
