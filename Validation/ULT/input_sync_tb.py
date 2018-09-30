@@ -18,9 +18,23 @@ def adder_basic_test(dut):
     yield FallingEdge(dut.clock)
     yield FallingEdge(dut.clock)
     if dut.data_out != 1:
-        print("This shit is broken")
+        raise TestFailure("Trigger isn't working for positive edge capture")
     else:
-        print("It might work")
+        
+        dut.log.info("It might work")
+    
+    dut.data_in = 2
+    dut.edge_capture = 1
+    yield RisingEdge(dut.clock)
+    #yield Timer(1)
+    
+    if dut.data_out != 2:
+        raise TestFailure("Trigger isn't working for negative edge capture")
+    else:
+        dut.log.info("Once again, this might be working")
+    
+    yield RisingEdge(dut.clock)
+    
     # yield Timer(2)
     # A = 5
     # B = 10
