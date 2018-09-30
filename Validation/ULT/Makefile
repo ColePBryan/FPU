@@ -1,5 +1,5 @@
 PWD=$(shell pwd)
-COCOTB=$(PWD)/../cocotb
+#COCOTB=~/cocotb
 
 WPWD=$(shell pwd)
 PYTHONPATH := $(WPWD)/../model:$(PYTHONPATH)
