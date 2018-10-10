@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name="results">
+  <testsuite name="all" package="all" tests="0">
+    <property name="random_seed" value="1539061452" />
+    <testcase classname="test_small_calculator" name="add_test" ratio_time="36358674074234.2" sim_time_ns="401000000000.0" time="0.01102900505065918" />
+    <testcase classname="test_small_calculator" name="and_test" ratio_time="128232519924330.27" sim_time_ns="501000000000.0" time="0.003906965255737305" />
+    <testcase classname="test_small_calculator" name="or_test" ratio_time="129688718385484.17" sim_time_ns="501000000000.0" time="0.003863096237182617" />
+    <testcase classname="test_small_calculator" name="sub_test" ratio_time="97700683652594.39" sim_time_ns="501000000000.0" time="0.005127906799316406" />
+  </testsuite>
+</testsuites>
