@@ -1,6 +1,4 @@
-module mux4 # (
-        parameter WIDTH = 32
-    ) (
+module mux4 #(parameter WIDTH = 4) (
         input  wire [1:0]       sel,
         input  wire [WIDTH-1:0] in0,
         input  wire [WIDTH-1:0] in1,
@@ -17,5 +15,5 @@ module mux4 # (
             2'b11: out = in3;
         endcase
     end
-
+    
 endmodule
